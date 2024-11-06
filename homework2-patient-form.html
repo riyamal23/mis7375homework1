@@ -96,16 +96,16 @@ Description: This file contains the patient registration form for Precision Care
                     <td><input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" required></td>
                 </tr>
                 <tr>
-                    <td><label for="ssn">Social Security Number:</label></td>
-                    <td><input type="password" id="ssn" name="ssn" maxlength="11" required></td>
+                    <td><label for="ssn">SSN:</label></td>
+                    <td>
+                        <input type="text" id="ssn" name="ssn" title="Enter your SSN in the format XXX-XX-XXXX" pattern="\d{3}-\d{2}-\d{4}" required>
+                    </td>
                 </tr>
                 <tr>
-                    <td><label for="address1">Address Line 1:</label></td>
-                    <td><input type="text" id="address1" name="address1" maxlength="30" required></td>
-                </tr>
-                <tr>
-                    <td><label for="address2">Address Line 2:</label></td>
-                    <td><input type="text" id="address2" name="address2" maxlength="30"></td>
+                    <td><label for="address">Address:</label></td>
+                    <td>
+                        <input type="text" id="address" name="address" title="Enter your full address, including street, city, and zip code">
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="city">City:</label></td>
@@ -122,8 +122,16 @@ Description: This file contains the patient registration form for Precision Care
                     <td><input type="text" id="zip" name="zip" maxlength="10" required></td>
                 </tr>
                 <tr>
-                    <td><label for="email">Email Address:</label></td>
-                    <td><input type="email" id="email" name="email" required></td>
+                    <td><label for="email">Email:</label></td>
+                    <td>
+                        <input type="email" id="email" name="email" title="Enter a valid email address" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone:</label></td>
+                    <td>
+                        <input type="tel" id="phone" name="phone" title="Enter your phone number in the format XXX-XXX-XXXX" pattern="\d{3}-\d{3}-\d{4}">
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="symptoms">Current Symptoms:</label></td>
@@ -175,17 +183,24 @@ Description: This file contains the patient registration form for Precision Care
                 </tr>
                 <tr>
                     <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" name="password" required></td>
+                    <td>
+                        <input type="password" id="password" name="password" title="Enter a secure password, at least 8 characters long" required>
+                    </td>
                 </tr>
                 <tr>
-                    <td><label for="re_password">Re-enter Password:</label></td>
-                    <td><input type="password" id="re_password" name="re_password" required></td>
+                    <td><label for="confirmPassword">Confirm Password:</label></td>
+                    <td>
+                        <input type="password" id="confirmPassword" name="confirmPassword" title="Re-enter your password for confirmation" required>
+                        <span id="passwordMessage" class="error-message"></span>
+                    </td>
                 </tr>
                 <tr>
-                    <td colspan="6">
-                        <button type="reset">Clear and Start Over</button>
+                    <td colspan="2" style="text-align: center;">
                         <button type="submit">Submit</button>
+                        <button type="reset">Clear and Start Over</button>
                         <button type="button" onclick="displayReview()">Review</button>
+                    </td>
+                </tr>
                     </td>
                 </tr>
             </table>
