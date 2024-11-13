@@ -21,6 +21,50 @@ Description: This file contains the patient registration form for Precision Care
             const today = new Date().toLocaleDateString('en-US', options);
             document.getElementById('currentDate').innerHTML = today;
         }
+        function displayReview() {
+            const firstName = document.getElementById('first_name').value.trim();
+            const middleInitial = document.getElementById('middle_initial').value.trim();
+            const lastName = document.getElementById('last_name').value.trim();
+            const dob = document.getElementById('dob').value.trim();
+            const ssn = document.getElementById('ssn').value.trim();
+            const address1 = document.getElementById('address1').value.trim();
+            const address2 = document.getElementById('address2').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const state = document.getElementById('state').value;
+            const zip = document.getElementById('zip').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const symptoms = document.getElementById('symptoms').value.trim();
+            const travel = document.querySelector('input[name="travel"]:checked').value;
+            const vaccinated = document.querySelector('input[name="vaccinated"]:checked').value;
+            const medications = document.querySelector('input[name="medications"]:checked').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const healthRating = document.getElementById('health_rating').value;
+            const userId = document.getElementById('user_id').value.trim();
+
+            const reviewInfo = `
+                <h3>Review Information:</h3>
+                <p><strong>First Name:</strong> ${firstName}</p>
+                <p><strong>Middle Initial:</strong> ${middleInitial}</p>
+                <p><strong>Last Name:</strong> ${lastName}</p>
+                <p><strong>Date of Birth:</strong> ${dob}</p>
+                <p><strong>Social Security Number:</strong> ${ssn}</p>
+                <p><strong>Address Line 1:</strong> ${address1}</p>
+                <p><strong>Address Line 2:</strong> ${address2}</p>
+                <p><strong>City:</strong> ${city}</p>
+                <p><strong>State:</strong> ${state}</p>
+                <p><strong>Zip Code:</strong> ${zip}</p>
+                <p><strong>Email Address:</strong> ${email}</p>
+                <p><strong>Current Symptoms:</strong> ${symptoms}</p>
+                <p><strong>International Travel:</strong> ${travel}</p>
+                <p><strong>Vaccinated:</strong> ${vaccinated}</p>
+                <p><strong>Currently Taking Medications:</strong> ${medications}</p>
+                <p><strong>Gender:</strong> ${gender}</p>
+                <p><strong>Health Rating:</strong> ${healthRating}</p>
+                <p><strong>Desired User ID:</strong> ${userId}</p>
+            `;
+            
+            document.getElementById('reviewSection').innerHTML = reviewInfo;
+        }
     </script>
 </head>
 <body onload="displayDate()">
@@ -188,12 +232,15 @@ Description: This file contains the patient registration form for Precision Care
                     <td colspan="2" style="text-align: center;">
                         <button type="button" id="validateBtn">Validate</button>
                         <button type="reset">Clear</button>
+                        <button type="button" onclick="displayReview()">Review</button>
                     </td>
                 </tr>
             </table>
         </form>
     </main>
     <div id="validationSummary"></div>
+    <div id="reviewSection" style="margin-top: 20px;"></div>
+
 
     <script src="./validation.js"></script>
 
