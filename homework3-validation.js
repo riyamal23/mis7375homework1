@@ -146,3 +146,4 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('health_rating_output').textContent = value;
     };
 });
+
