@@ -1,0 +1,63 @@
+/*
+Program name: patient-form.html
+Author: Riya Malhotra
+Date created: Sept 19, 2024
+Date last edited: Sept 20, 2024
+Version: 1.0
+Description: This file contains the patient registration form for Precision Care Medical.
+*/
+
+ body {
+    font-family: 'Lucida Sans', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #004080;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+}
+
+footer {
+    background-color: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer button {
+    background-color: #fff;
+    color: #004080;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #cccccc;
+}
+
+.banner p {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #004080;
+}
+
+.banner img {
+    border-radius: 100%;
+}
+
+.social-links a {
+    color: black;
+    text-decoration: underline;
+}
